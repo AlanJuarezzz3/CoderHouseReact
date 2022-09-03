@@ -11,8 +11,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import CustomizedBadges from './CartWidget';
 
-const pages = ['Productos', 'Extra', 'Nosotros'];
+const pages = ['Motos', 'Productos', 'Nosotros'];
 const settings = ['ayuda', 'contactar'];
 
 const ResponsiveAppBar = () => {
@@ -89,6 +90,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+          
           <Typography
             variant="h5"
             noWrap
@@ -119,12 +121,17 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
+          <Box>
+          <CustomizedBadges/>
+           </Box>
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
