@@ -1,6 +1,6 @@
 import React from 'react';
 import ResponsiveAppBar from './Components/Navbar';
-import Mensaje from './Components/Mensaje';
+import Mensaje from './Components/ItemListContainer';
 
 const App = () => {
   return(  
