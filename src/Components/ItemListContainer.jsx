@@ -1,12 +1,15 @@
-const Mensaje = (props) => {
+import Contador from './Contador';
+
+const ItemListContainer = (props) => {
     return(
     <>
     <h2>Moto</h2>
     <p>descripcion: {props.descripcion}</p>
     <p>precio: {props.precio}</p>
+    <Contador initial ={1} stock ={10}/>
     <hr/>
     </>
     );
 }
 
-export default Mensaje;
+export default ItemListContainer;
