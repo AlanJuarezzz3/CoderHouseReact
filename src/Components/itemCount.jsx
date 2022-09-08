@@ -39,4 +39,4 @@ const Contador = ({initial, stock}) => {
   )
 }
 
-export default Contador
+export default Contador;
