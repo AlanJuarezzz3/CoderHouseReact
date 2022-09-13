@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
+import Button from '@mui/material/Button';
 
 const Contador = ({initial, stock}) => {
 
@@ -31,10 +32,11 @@ const Contador = ({initial, stock}) => {
     
   return (
     <>
-        <button onClick={()=> sumar()}>+</button>
-        <button onClick={()=> restar()}>-</button>
+        <Button onClick={()=> sumar()}>+</Button>
         <spam>{contador}</spam>
-        <button onClick={()=> agregarAlCarro()}>Agregar al Carrito</button>
+        <Button onClick={()=> restar()}>-</Button>
+        
+        <Button onClick={()=> agregarAlCarro()}>Agregar al Carrito</Button>
     </>
   )
 }

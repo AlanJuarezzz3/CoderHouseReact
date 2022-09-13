@@ -1,13 +1,12 @@
 import React from 'react';
 import ResponsiveAppBar from './Components/Navbar';
-import ItemListContainer from './Components/ItemListContainer';
+import ItemListContainer from './Components/itemsList/ItemListContainer';
 
 const App = () => {
   return(  
     <div className='Nav'>
      <ResponsiveAppBar />
-     <ItemListContainer descripcion="Ninja" precio="$30.000"/>
-     <ItemListContainer descripcion ="Honda" precio ="$10.000"/>
+     <ItemListContainer/>
     </div>
   );
 }
