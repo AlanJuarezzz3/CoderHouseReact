@@ -12,8 +12,12 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import CustomizedBadges from './CartWidget';
+import {Link} from 'react-router-dom';
 
-const pages = ['Motos', 'Productos', 'Nosotros'];
+const pages = [<Link to ='category/Motos'>Motos</Link>,
+              <Link to ='category/Productos'>Productos</Link>,
+              <Link to ='category/Nosotros'>Nosotros</Link>
+              ];
 const settings = ['ayuda', 'contactar'];
 
 const ResponsiveAppBar = () => {

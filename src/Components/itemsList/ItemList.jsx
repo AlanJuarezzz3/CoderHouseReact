@@ -3,11 +3,11 @@ import Item from './Item';
 
 const ItemList = ({listProducts}) => {
   return (
-    <>
+    <div className='mapacarta'>
     {listProducts.map((product) => (
         <Item product={product} key ={product.id}/>
     ))}
-    </>
+    </div>
   );
 };
 

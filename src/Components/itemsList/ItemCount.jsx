@@ -32,10 +32,9 @@ const Contador = ({initial, stock}) => {
     
   return (
     <>
-        <Button onClick={()=> sumar()}>+</Button>
-        <spam>{contador}</spam>
         <Button onClick={()=> restar()}>-</Button>
-        
+        <span>{contador}</span>
+        <Button onClick={()=> sumar()}>+</Button>
         <Button onClick={()=> agregarAlCarro()}>Agregar al Carrito</Button>
     </>
   )
