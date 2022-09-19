@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from './ItemDetail';
-import {useParams} from 'react-router-dom';
 import products from "../../products";
 
 const ItemDetailContainer =() =>{
@@ -27,11 +26,12 @@ const ItemDetailContainer =() =>{
         },2000);
     }, [id])
     console.log(item)
+    return(
+        <>
+            <ItemDetail product = {item}/>
+        </>
+    )
 }
-return(
-    <>
-        <ItemDetail item ={item}/>
-    </>
-)
+
 
 export default ItemDetailContainer;

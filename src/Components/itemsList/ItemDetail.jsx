@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '@mui/material/Card';
 
 const ItemDetail = ({product}) =>{
     return(
