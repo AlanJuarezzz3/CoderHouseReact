@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import CustomizedBadges from './CartWidget';
 import {Link} from 'react-router-dom';
 
-const pages = [<Link to ='category/Motos'>Motos</Link>,
+const pages  = [<Link to ='category/Motos'>Motos</Link>,
               <Link to ='category/Productos'>Productos</Link>,
               <Link to ='category/Nosotros'>Nosotros</Link>
               ];

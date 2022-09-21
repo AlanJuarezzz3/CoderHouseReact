@@ -1,5 +1,4 @@
 import React from 'react';
-import Contador from './ItemCount';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -10,7 +9,7 @@ import {Link} from 'react-router-dom';
 const Item = ({product}) => {
   return (
     <Card sx={{maxWidth: 320}}>
-      <img src={product.img} alt i="magen1"/>
+      <img width={284} height={188} src={product.img} alt="magen1"/>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
         {product.nombre}
@@ -20,7 +19,6 @@ const Item = ({product}) => {
         </Typography>
       </CardContent>
       <CardActions>
-      <Contador initial ={1} stock ={10}/>
       <Link to = {`/item/${product.id}`}><Button>Detalle</Button></Link>
       </CardActions>
       <hr></hr>
