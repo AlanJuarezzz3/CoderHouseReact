@@ -12,11 +12,12 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import CustomizedBadges from './CartWidget';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
-const pages  = [<Link to ='category/Motos'>Motos</Link>,
-              <Link to ='category/Productos'>Productos</Link>,
-              <Link to ='category/Nosotros'>Nosotros</Link>
+
+const pages  = [<NavLink to ='category/Motos' activeClassName="active">Motos</NavLink>,
+              <NavLink to ='category/Productos' activeClassName="active">Productos</NavLink>,
+              <NavLink to ='category/Nosotros' activeClassName="active">Nosotros</NavLink>
               ];
 const settings = ['ayuda', 'contactar'];
 
@@ -113,14 +114,14 @@ const ResponsiveAppBar = () => {
           >
             DylanMotos
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
+              >{page}
               </Button>
             ))}
           </Box>
