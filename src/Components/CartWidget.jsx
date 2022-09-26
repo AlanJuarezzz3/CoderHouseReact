@@ -3,6 +3,9 @@ import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
+
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -14,10 +17,13 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
+
+
 export default function CustomizedBadges() {
+  const contextP = useContext(CartContext)
   return (
     <IconButton href="/cart" aria-label="cart">
-      <StyledBadge badgeContent={1} color="secondary">
+      <StyledBadge badgeContent={contextP.sumaCarrito()} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>

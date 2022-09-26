@@ -13,6 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import CustomizedBadges from './CartWidget';
 import {NavLink} from 'react-router-dom';
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
+
 
 
 const pages  = [<NavLink to ='category/Motos' activeClassName="active">Motos</NavLink>,
@@ -22,6 +25,7 @@ const pages  = [<NavLink to ='category/Motos' activeClassName="active">Motos</Na
 const settings = ['ayuda', 'contactar'];
 
 const ResponsiveAppBar = () => {
+  const contextP = useContext(CartContext)
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -127,8 +131,8 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Box>
-          <CustomizedBadges/>
-           </Box>
+            {(contextP.cartList.length != 0) && <CustomizedBadges/>}
+          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -166,7 +170,6 @@ const ResponsiveAppBar = () => {
   );
 };
 export default ResponsiveAppBar;
-
 
 
 
