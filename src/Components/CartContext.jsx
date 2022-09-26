@@ -6,7 +6,7 @@ const CartContexProvider = ({children}) =>{
     const [cartList, setCartList] = useState([]);
 
     const addItem = (product, cantidad) => {
-
+        
         product.cantidad=cantidad;
         setCartList([...cartList, product]);
     }
@@ -18,6 +18,11 @@ const CartContexProvider = ({children}) =>{
     const removeItem = (id) =>{
         setCartList(cartList.filter(product => product.id !== id))
     }
+
+   /*  const calcItemQty = () => {
+        let qtys = cartList.map(item => item.qtyItem);
+        return qtys.reduce(((previousVale, currentValue)=> previousVale + currentValue),0);
+    } */
 
     return(
         <CartContext.Provider value={{cartList, addItem, clear, removeItem}}>

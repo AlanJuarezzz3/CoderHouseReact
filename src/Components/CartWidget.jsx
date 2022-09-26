@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
+
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     right: -3,
@@ -15,7 +16,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 export default function CustomizedBadges() {
   return (
-    <IconButton aria-label="cart">
+    <IconButton href="/cart" aria-label="cart">
       <StyledBadge badgeContent={1} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>
