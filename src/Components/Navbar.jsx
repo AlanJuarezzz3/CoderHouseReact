@@ -131,7 +131,7 @@ const ResponsiveAppBar = () => {
           </Box>
 
           <Box>
-            {(contextP.cartList.length != 0) && <CustomizedBadges/>}
+            {(contextP.cartList.length !== 0) && <CustomizedBadges/>}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

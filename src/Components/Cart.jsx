@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 
 
 
-const Cart = () =>{
-  const ctx = useContext(CartContext);
+const Cart = () => {
+  const ctx  = useContext(CartContext);
 
     return(
         <>
@@ -36,7 +36,7 @@ const Cart = () =>{
                 </table>
                 </div>)
             }
-            <Button>Terminar Compra</Button>
+            <Button>Terminar Compra</Button><p>{()=>ctx.totalProductPrice()}</p>
         </>
     )
 }

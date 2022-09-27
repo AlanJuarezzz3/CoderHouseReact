@@ -3,17 +3,18 @@ import products from '../../products';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({greeting}) => {
+
+const ItemListContainer = () => {
 
     const [listProducts, setListProducts] = useState ([])
 const {categoria} = useParams()
     console.log(categoria);
 
     const customFetch =(items) =>{
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
           setTimeout(() =>{
             if (categoria){
-              resolve(products.filter((item)=>item.categoria == categoria));  
+              resolve(products.filter((item)=>item.categoria === categoria));  
             }else resolve (products);
               resolve(items);
           }, 2000);

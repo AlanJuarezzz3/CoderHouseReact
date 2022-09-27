@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from './ItemDetail';
 import products from "../../products";
-// import { CircularProgress } from "@mui/material";
+
 
 const ItemDetailContainer =() =>{
     const [item, setItem] = useState({})
@@ -11,7 +11,7 @@ const ItemDetailContainer =() =>{
     console.log(id)
 
     const customFetch =(productos) =>{
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             setTimeout(() =>{
                 if(id){
                     resolve(products.find((item) => item.id == id));  
