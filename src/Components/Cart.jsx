@@ -36,7 +36,10 @@ const Cart = () => {
                 </table>
                 </div>)
             }
-            <Button>Terminar Compra</Button><p>{()=>ctx.totalProductPrice()}</p>
+            <div>
+            <h3>Monto total de compra: ${ctx.totalProductPrice()}</h3>
+            <Button>Terminar Compra</Button>
+            </div>
         </>
     )
 }

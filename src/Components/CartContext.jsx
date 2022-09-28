@@ -37,9 +37,9 @@ const CartContexProvider = ({children}) =>{
     }
 //nueva funcion
     const totalProductPrice = () =>{
-        return cartList.reduce((acumulador, Valor)=>(acumulador + (Valor.Cantidad * Valor.itemCart.precio)), 0)
+        return cartList.reduce((acumulador, Valor)=>(acumulador + (Valor.cantidad * Valor.precio)), 0)
     }
-
+   
     return(
         <CartContext.Provider value={{cartList, addItem, clear, removeItem, sumaCarrito, totalProductPrice}}>
             { children }
