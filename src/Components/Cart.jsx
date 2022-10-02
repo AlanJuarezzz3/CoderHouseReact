@@ -2,11 +2,45 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
+import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore";
+import db from '../../firebaseConfig';
 
 
 
 const Cart = () => {
   const ctx  = useContext(CartContext);
+
+    const createOrder = async () =>{
+        const itemsForDB = ctx.cartList.map(item => ({
+            id: item.id,
+            title: item.nombre,
+            price: item.precio,
+            quantity: item.cantidad
+        }))
+
+        let order = {
+            buyer:{
+                name:"",
+                email:"",
+                phone:"",
+            },
+            items: itemsForDB,
+            date: serverTimestamp(),
+            total: ctx.totalProductPrice(),
+        }
+
+        const newOrderRef = doc(collection(db, "orders"))
+        await setDoc(newOrderRef,order)
+
+        ctx.cartList.forEach(async(item) => {
+            const itemRef = doc (db, "products", item.id);
+            await updateDoc (itemRef, {
+                stock: increment(-item.cantidad)
+            });
+        })
+        ctx.clear()
+        alert ('su orden fue realizada' + newOrderRef.id)
+    }
 
     return(
         <>
@@ -38,7 +72,7 @@ const Cart = () => {
             }
             <div>
             <h3>Monto total de compra: ${ctx.totalProductPrice()}</h3>
-            <Button>Terminar Compra</Button>
+            <Button onClick={createOrder}>Terminar Compra</Button>
             </div>
         </>
     )

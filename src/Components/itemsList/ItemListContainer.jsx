@@ -11,7 +11,6 @@ const {idCategoria} = useParams()
 
       useEffect(()=>{
         if(idCategoria){
-          //trae solo algunos
           const getData = async ()=>{
             const q = query(collection(db, "products"), where('categoria', '==', idCategoria))
             const querySnapshot = await getDocs(q);
@@ -22,8 +21,7 @@ const {idCategoria} = useParams()
               setListProducts(dataFromFirestore)
           }
           getData();
-
-
+          
         }else{
         const getData = async ()=>{
         const querySnapshot = await getDocs(collection(db, "products"));
