@@ -3,7 +3,7 @@ import { CartContext } from "./CartContext";
 import Button from '@mui/material/Button';
 import {Link} from 'react-router-dom';
 import { serverTimestamp, doc, setDoc, collection, updateDoc, increment } from "firebase/firestore";
-import db from '../../firebaseConfig';
+import db from '../firebaseConfig';
 
 
 
