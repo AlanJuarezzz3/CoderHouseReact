@@ -19,8 +19,7 @@ import { CartContext } from "./CartContext";
 
 
 const pages  = [<NavLink to ='category/Motos' activeClassName="active">Motos</NavLink>,
-              <NavLink to ='category/Productos' activeClassName="active">Productos</NavLink>,
-              <NavLink to ='category/Nosotros' activeClassName="active">Nosotros</NavLink>
+              <NavLink to ='category/Productos' activeClassName="active">Productos</NavLink>
               ];
 const settings = ['ayuda', 'contactar'];
 
